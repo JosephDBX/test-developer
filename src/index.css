@@ -23,6 +23,15 @@
   .btn-primary:active {
     @apply text-blue-500 border-blue-500;
   }
+  .btn-secondary {
+    @apply text-green-300 border-green-300;
+  }
+  .btn-secondary:hover {
+    @apply text-green-400 border-green-400;
+  }
+  .btn-secondary:active {
+    @apply text-green-500 border-green-500;
+  }
   /* Inputs */
   .input {
     @apply p-1 bg-white border-b-2 text-gray-500 rounded-sm;

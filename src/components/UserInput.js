@@ -1,11 +1,14 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
-const UserInput = () => {
+const UserInput = ({ onSearch }) => {
     const { register, handleSubmit, errors } = useForm();
-    const onSubmit = data => console.log(data);
 
-    const mismath = (value) => value !== "react";
+    const onSubmit = data => onSearch(data);
+
+    const mismath = value => !value.toLowerCase().includes("react");
 
     return <form
         onSubmit={handleSubmit(onSubmit)}
@@ -37,7 +40,10 @@ const UserInput = () => {
             </p>
         </div>
 
-        <button type="submit" className="btn btn-primary">Search</button>
+        <button type="submit" className="btn btn-primary">
+            <span className="mr-2">Search</span>
+            <FontAwesomeIcon icon={faSearch} size="1x" />
+        </button>
     </form>;
 }
 
