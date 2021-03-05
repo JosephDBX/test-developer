@@ -20,12 +20,6 @@ const UserList = () => {
                     error: null,
                     loading: false
                 });
-            }, error => {
-                setUsers({
-                    items: [],
-                    error,
-                    loading: false
-                });
             });
     }
 
@@ -36,12 +30,16 @@ const UserList = () => {
 
         <hr className="text-gray-900 my-4" />
 
-        {users.loading ? <div className="mx-auto text-gray-600 font-medium">Loading...</div>
-            : <ul>
-                {users.items.map(user => <li key={user.id}>
-                    <UserListItem user={user} />
-                </li>)}
-            </ul>}
+        {users.loading
+            ? <div className="mx-auto text-gray-600 font-medium">Loading...</div>
+
+            : users.items.length > 0
+                ? <ul>
+                    {users.items.map(user => <li key={user.id}>
+                        <UserListItem user={user} />
+                    </li>)}
+                </ul>
+                : <div className="mx-auto text-gray-600 font-medium">No match results!</div>}
     </div>;
 }
 
