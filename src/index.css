@@ -2,3 +2,50 @@
   margin: 0;
   padding: 0;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+  /* Buttons */
+  .btn {
+    @apply px-4 py-1 rounded-2xl bg-white font-medium border-2;
+  }
+  .btn:focus {
+    @apply shadow-sm outline-none;
+  }
+  .btn-primary {
+    @apply text-blue-300 border-blue-300;
+  }
+  .btn-primary:hover {
+    @apply text-blue-400 border-blue-400;
+  }
+  .btn-primary:active {
+    @apply text-blue-500 border-blue-500;
+  }
+  /* Inputs */
+  .input {
+    @apply p-1 bg-white border-b-2 text-gray-500 rounded-sm;
+  }
+  .input:focus {
+    @apply shadow-sm outline-none;
+  }
+  .input-primary {
+    @apply border-blue-300 placeholder-blue-200 text-blue-500;
+  }
+  .input-primary:hover {
+    @apply border-blue-400 placeholder-blue-300;
+  }
+  .input-primary:focus {
+    @apply border-blue-500 placeholder-blue-300;
+  }
+  .input-error {
+    @apply border-red-300 placeholder-red-200 text-red-500;
+  }
+  .input-error:hover {
+    @apply border-red-400 placeholder-red-300;
+  }
+  .input-error:focus {
+    @apply border-red-500 placeholder-red-300;
+  }
+}
