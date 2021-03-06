@@ -1,7 +1,7 @@
 import React from "react";
 
 const UserDetail = ({ user }) => {
-    return <div className="my-4 mx-auto p-4 w-80 border-green-300 border-2 rounded-md">
+    return <div className="p-4 border-green-300 border-2 rounded-md">
         <h3 className="text-green-600 font-bold">Name: {user.name}</h3>
 
         <p className="text-gray-500 font-light">

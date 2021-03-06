@@ -4,11 +4,11 @@ import UserListItem from "./UserListItem";
 
 const UserList = ({ onSearch, users }) => {
     return <div className="flex flex-col">
-        <div className="mx-auto mt-8">
+        <div className="mx-auto">
             <UserInput onSearch={onSearch} />
         </div>
 
-        <hr className="text-gray-900 my-4" />
+        <hr className="text-gray-900 my-4 mx-2" />
 
         {users.loading
             ? <div className="mx-auto text-gray-600 font-medium">Loading...</div>

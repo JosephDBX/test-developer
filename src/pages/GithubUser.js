@@ -28,17 +28,16 @@ const GithubUser = () => {
                     error,
                     loading: false
                 });
-                console.log(item);
             });
     }, [name]);
 
     return <>{user.loading
-        ? <div>Loading...</div>
+        ? <div className="my-4 text-center text-gray-600 font-medium">Loading...</div>
         : user.error !== null
-            ? <div>
+            ? <div className="my-4 mx-auto justify-center w-96">
                 <UserError title={user.error.message} message={`User name: "${name}", ${user.error.message}`} />
             </div>
-            : <div>
+            : <div className="my-4 mx-auto justify-center w-80">
                 <UserDetail user={user.item} />
             </div>}
     </>;

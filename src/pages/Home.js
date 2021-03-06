@@ -1,31 +1,35 @@
 import React, { useState } from "react";
+import UserGraph from "../components/UserGraph";
 import UserList from "../components/UserList";
 
 const Home = () => {
     const [users, setUsers] = useState({
         loading: false,
-        error: null,
         items: []
     });
 
     const onSearch = data => {
-        setUsers({ loading: true });
+        setUsers({ ...users, loading: true });
 
         fetch(`https://api.github.com/search/users?q=${data.search}&per_page=10`)
             .then(res => res.json())
-            .then(result => {
+            .then(async (result) => {
                 setUsers({
                     items: [...result.items],
-                    error: null,
                     loading: false
                 });
-                console.log(result.items);
             });
     }
 
-    return <>
-        <UserList onSearch={onSearch} users={users} />
-    </>;
+    return <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+        <div className="col-span-1 mt-8">
+            <UserList onSearch={onSearch} users={users} />
+        </div>
+
+        <div className="col-span-1 xl:col-span-2 mt-8">
+            <UserGraph items={users.items} />
+        </div>
+    </div>;
 }
 
 export default Home;
