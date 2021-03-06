@@ -10,7 +10,7 @@ const UserDetail = ({ user }) => {
         </p>
 
         <div className="w-40 h-40 my-4 mx-auto rounded-full border-2 border-green-300">
-            <img className="rounded-full" src={user.avatar_url} />
+            <img className="rounded-full" alt="User avatar" src={user.avatar_url} />
         </div>
 
         <p className="text-gray-600">

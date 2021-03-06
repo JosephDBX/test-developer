@@ -19,6 +19,7 @@ const Home = () => {
                     error: null,
                     loading: false
                 });
+                console.log(result.items);
             });
     }
 
