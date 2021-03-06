@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const UserInput = ({ onSearch }) => {
+    // Use register as an "onChange" event handler
     const { register, handleSubmit, errors } = useForm();
 
     const onSubmit = data => onSearch(data);
@@ -14,6 +15,7 @@ const UserInput = ({ onSearch }) => {
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-row space-x-6 items-start">
         <div>
+            {/* and asign a boolean return for every item in register object */}
             <input
                 name="search"
                 className={`input input-primary ${!!errors.search ? "input-error" : ""}`}

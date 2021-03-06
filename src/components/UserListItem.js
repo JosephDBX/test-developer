@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowCircleRight } from "@fortawesome/free-solid-svg-icons";
 
+// Show a single item in the list of searched users
 const UserListItem = ({ user }) => {
     return <div className="m-1 px-2 py-1 rounded-sm border-b-2 border-green-300 flex flex-row justify-between space-x-2 items-center">
         <div className="text-gray-500">

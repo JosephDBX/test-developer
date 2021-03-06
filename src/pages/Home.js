@@ -8,12 +8,13 @@ const Home = () => {
         items: []
     });
 
+    // Fetch users data on search button pressed
     const onSearch = data => {
         setUsers({ ...users, loading: true });
 
         fetch(`https://api.github.com/search/users?q=${data.search}&per_page=10`)
             .then(res => res.json())
-            .then(async (result) => {
+            .then(result => {
                 setUsers({
                     items: [...result.items],
                     loading: false

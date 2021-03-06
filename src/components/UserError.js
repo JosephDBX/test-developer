@@ -2,6 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
 
+// Show a generic error card message
 const UserError = ({ title, message }) => {
     return <>
         {message && <div className="error p-2 flex flex-row space-x-6 bg-red-100 rounded-md border-red-500 border-2 text-red-500">

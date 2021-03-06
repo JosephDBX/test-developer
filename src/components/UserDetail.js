@@ -1,5 +1,6 @@
 import React from "react";
 
+// Show the current user data
 const UserDetail = ({ user }) => {
     return <div className="p-4 border-green-300 border-2 rounded-md">
         <h3 className="text-green-600 font-bold">Name: {user.name}</h3>

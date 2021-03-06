@@ -11,6 +11,7 @@ const GithubUser = () => {
     });
     const { name } = useParams();
 
+    // Fetch current user data from query param
     useEffect(() => {
         setUser({ loading: true });
 
@@ -20,7 +21,9 @@ const GithubUser = () => {
                 let item = null;
                 let error = null;
 
+                // Verify if current user exist
                 if (!!result.login) item = result;
+                // asign the result to error, because the api fetch "Not Found" to result
                 else error = result;
 
                 setUser({

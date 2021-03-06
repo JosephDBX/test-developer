@@ -2,6 +2,7 @@ import React from "react";
 import UserInput from "./UserInput";
 import UserListItem from "./UserListItem";
 
+// Show the user input and the list result for the search
 const UserList = ({ onSearch, users }) => {
     return <div className="flex flex-col">
         <div className="mx-auto">
