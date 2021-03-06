@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import UserDetail from "../components/UserDetail";
+import UserError from "../components/UserError";
 
 const GithubUser = () => {
     const [user, setUser] = useState({
@@ -26,12 +28,20 @@ const GithubUser = () => {
                     error,
                     loading: false
                 });
+                console.log(item);
             });
     }, [name]);
 
-    return <>{user.loading ? <div>Loading...</div>
-        : user.error !== null ? <div>{user.error.message}</div>
-            : user.item.login}</>;
+    return <>{user.loading
+        ? <div>Loading...</div>
+        : user.error !== null
+            ? <div>
+                <UserError title={user.error.message} message={`User name: "${name}", ${user.error.message}`} />
+            </div>
+            : <div>
+                <UserDetail user={user.item} />
+            </div>}
+    </>;
 }
 
 export default GithubUser;

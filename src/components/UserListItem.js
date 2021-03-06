@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowCircleRight } from "@fortawesome/free-solid-svg-icons";
 
 const UserListItem = ({ user }) => {
-    return <div className="my-1 px-2 py-1 rounded-sm border-b-2 border-green-300 flex flex-row justify-between space-x-2 items-center">
+    return <div className="m-1 px-2 py-1 rounded-sm border-b-2 border-green-300 flex flex-row justify-between space-x-2 items-center">
         <div className="text-gray-500">
             <h3 className="font-medium">Name: {user.login}</h3>
 
